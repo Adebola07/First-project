@@ -14,7 +14,7 @@ pipeline {
              steps {
                 script {
                     sh "echo my name is ${new_env}"
-                    sh 'echo my creds are $my_env_USR and $my_env_PSW'
+                    sh "echo my creds are ${my_env_USR} and ${my_env_PSW}"
                 }
             }
         }
