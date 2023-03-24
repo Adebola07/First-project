@@ -1,7 +1,5 @@
 pipeline {
-    agent {
-        label 'mynode'
-    }
+    agent any
     tools {
         maven 'maven'
     }
@@ -15,6 +13,15 @@ pipeline {
                 script {
                     sh "echo my name is ${new_env}"
                     sh "echo my creds are ${my_env_USR} and ${my_env_PSW}"
+                    def variable = 'zamani'
+                    echo "my name is ${variable}"
+                }
+            }
+        }
+        stage ('testing variable'){
+            steps {
+                script {
+                echo "my name is ${variable}"
                 }
             }
         }
