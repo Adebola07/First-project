@@ -14,7 +14,7 @@ pipeline {
                     sh "echo my name is ${new_env}"
                     sh 'echo my creds are $my_env_USR and $my_env_PSW'
                     env.variable = 'zamani'
-                    echo "my aka is ${variable}"
+                    
                 }
             }
         }
