@@ -25,6 +25,14 @@ pipeline {
                 }
             }
         }
-       
+        stage ('ssh') {
+            steps {
+                script {
+                    sshagent(['nodes_job']) {
+                         sh "ssh -o StrictHostKeyChecking=no ubuntu@54.196.184.145 ls -al"
+                    }
+                }
+            }
+        }
     }
 }
