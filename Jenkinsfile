@@ -29,8 +29,9 @@ pipeline {
         stage ('ssh') {
             steps {
                 script {
+                    def comm = 'touch FM.txt'
                     sshagent(['remote']) {
-                         sh "ssh -o StrictHostKeyChecking=no ubuntu@3.226.238.252"
+                         sh "ssh -o StrictHostKeyChecking=no -l ubuntu@44.199.242.56 ${comm}"
                     }
                 }
             }
