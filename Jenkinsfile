@@ -31,7 +31,7 @@ pipeline {
                 script {
                     def comm = 'touch FM.txt'
                     sshagent(['server']) {
-                         sh "ssh -o StrictHostKeyChecking=no -l ubuntu@44.195.81.186 ${comm}"
+                         sh "ssh -o StrictHostKeyChecking=no ubuntu@44.195.81.186 ${comm}"
                     }
                 }
             }
